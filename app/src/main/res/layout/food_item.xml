@@ -9,11 +9,16 @@
             name="foodItemData"
             type="codes.malukimuthusi.restarauntdemoapp.database.FoodItem" />
 
+        <variable
+            name="foodItemData4Listener"
+            type="codes.malukimuthusi.restarauntdemoapp.FoodItemListener" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> foodItemData4Listener.onClick(foodItemData)}">
 
         <ImageView
             android:id="@+id/foodImage"

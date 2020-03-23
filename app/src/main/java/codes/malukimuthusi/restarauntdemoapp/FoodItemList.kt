@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import codes.malukimuthusi.restarauntdemoapp.Adapter.FoodItemAdapter
-import codes.malukimuthusi.restarauntdemoapp.databinding.FoodItemBinding
 import codes.malukimuthusi.restarauntdemoapp.databinding.FragmentFoodItemListBinding
 
 class FoodItemList : Fragment() {
@@ -19,7 +18,12 @@ class FoodItemList : Fragment() {
         val binding: FragmentFoodItemListBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_food_item_list, container, false)
 
-        binding.foodItemList.adapter = FoodItemAdapter()
+        val adapter =
+            FoodItemAdapter(
+                FoodItemListener { foodId ->
+                    Toast.makeText(context, "${foodId}", Toast.LENGTH_LONG).show()
+                })
+        binding.foodItemList.adapter = adapter
 
         return binding.root
     }
