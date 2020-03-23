@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Restaraunt Demo App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="food_image_description">An image of the food. Example Pilau.</string>
+    <string name="food_title">Title of the Food Displayed.</string>
+    <string name="foodDescriptionText">Description of the food Item Desplayed.</string>
+</resources>

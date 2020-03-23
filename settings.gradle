@@ -1,0 +1,2 @@
+rootProject.name='Restaraunt Demo App'
+include ':app'
