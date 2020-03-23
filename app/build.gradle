@@ -15,6 +15,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    apply plugin: 'kotlin-kapt'
 
 
     buildTypes {
