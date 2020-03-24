@@ -5,13 +5,16 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="codes.malukimuthusi.restarauntdemoapp.foodItemList.FoodItemListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FoodItemList">
+        tools:context=".foodItemList.FoodItemListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/foodItemList"
