@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import codes.malukimuthusi.restarauntdemoapp.database.FoodItem
 import codes.malukimuthusi.restarauntdemoapp.databinding.FoodItemBinding
 
-class FoodItemAdapter(val clickListener: FoodItemListener) :
+class FoodItemAdapter(private val clickListener: FoodItemListener) :
     ListAdapter<FoodItem, FoodItemAdapter.ViewHolder>(
         FoodItemDiffCallBack()
     ) {
@@ -24,7 +24,7 @@ class FoodItemAdapter(val clickListener: FoodItemListener) :
         holder.bind(item, clickListener)
     }
 
-    class ViewHolder private constructor(val binding: FoodItemBinding) :
+    class ViewHolder private constructor(private val binding: FoodItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FoodItem, clickListener: FoodItemListener) {
             binding.foodItemData = item

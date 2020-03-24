@@ -2,6 +2,7 @@ package codes.malukimuthusi.restarauntdemoapp.foodItemList
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import codes.malukimuthusi.restarauntdemoapp.database.FoodItem
 import codes.malukimuthusi.restarauntdemoapp.database.FoodItemDatabaseDao
@@ -31,7 +32,7 @@ class FoodItemListViewModel(val dataSource: FoodItemDatabaseDao, application: Ap
 //        initializedFoodItem()
 
         // create items for the database.
-        insertFoodItems()
+//        insertFoodItems()
 
     }
 
@@ -40,6 +41,25 @@ class FoodItemListViewModel(val dataSource: FoodItemDatabaseDao, application: Ap
             insertToDB()
         }
     }
+
+    // get List of Food Items.
+//    private var _foodItemList = getFoodItemsList()
+    val foodItemList = dataSource.listOfFoodItems()
+//        get() = _foodItemList as LiveData<List<FoodItem>>?
+
+
+//    private fun getFoodItemsList() {
+//        uiScope.launch {
+//            _foodItemList = getListOfItemsFromDB() as Unit
+//        }
+//    }
+//
+//    private suspend fun getListOfItemsFromDB(): LiveData<List<FoodItem>>? {
+//        return withContext(Dispatchers.IO) {
+//            dataSource.listOfFoodItems()
+//        }
+//
+//    }
 
     private suspend fun insertToDB() {
         withContext(Dispatchers.IO)

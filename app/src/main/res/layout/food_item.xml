@@ -28,6 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:setFoodImage="@{foodItemData}"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
@@ -35,17 +36,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textAlignment="center"
             android:text="@string/food_title"
             app:foodItemTitle="@{foodItemData}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/foodImage" />
+            app:layout_constraintTop_toBottomOf="@+id/foodImage"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/foodDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
             android:text="@string/foodDescriptionText"
             app:foodItemDescription="@{foodItemData}"
             app:layout_constraintEnd_toEndOf="parent"

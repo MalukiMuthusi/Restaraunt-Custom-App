@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import codes.malukimuthusi.restarauntdemoapp.R
 import codes.malukimuthusi.restarauntdemoapp.adapters.FoodItemAdapter
@@ -38,6 +39,7 @@ class FoodItemListFragment : Fragment() {
 
         binding.foodItemList.adapter = adapter
 
+
         // set View Model
         val application = requireNotNull(this.activity).application
         val dataSource = FoodItemDatabase.getInstance(application).foodItemDatabaseDao
@@ -45,6 +47,13 @@ class FoodItemListFragment : Fragment() {
         viewModel =
             ViewModelProviders.of(this, viewModelFactory).get(FoodItemListViewModel::class.java)
         binding.viewModel = viewModel
+
+        // Observe the List and notify Any changes
+        viewModel.foodItemList?.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
+            }
+        })
 
 
         return binding.root
