@@ -16,6 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     apply plugin: 'kotlin-kapt'
+    apply plugin: "androidx.navigation.safeargs.kotlin"
 
 
     buildTypes {

@@ -3,11 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/foodItemList">
+    app:startDestination="@id/createFoodItemFragment">
 
     <fragment
         android:id="@+id/foodItemList"
         android:name="codes.malukimuthusi.restarauntdemoapp.foodItemList.FoodItemListFragment"
         android:label="fragment_food_item_list"
         tools:layout="@layout/fragment_food_item_list" />
+    <fragment
+        android:id="@+id/createFoodItemFragment"
+        android:name="codes.malukimuthusi.restarauntdemoapp.createFoodItem.CreateFoodItemFragment"
+        android:label="CreateFoodItemFragment" >
+        <action
+            android:id="@+id/action_createFoodItemFragment_to_foodItemList"
+            app:destination="@id/foodItemList" />
+    </fragment>
 </navigation>

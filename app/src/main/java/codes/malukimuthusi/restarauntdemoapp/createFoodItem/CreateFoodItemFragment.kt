@@ -40,14 +40,15 @@ class CreateFoodItemFragment : Fragment() {
 
 
         // observe some navigation data to navigate.
-//        viewModel.toNavigate.observe(viewLifecycleOwner, Observer { nav ->
-//            nav?.let {
-//                this.findNavController().navigate(
-//                    CreateFoodItemFragmentDirections
-//                )
-//            }
-//
-//        })
+        viewModel.toNavigate.observe(viewLifecycleOwner, Observer { nav ->
+            nav?.let {
+                this.findNavController().navigate(
+                    CreateFoodItemFragmentDirections.actionCreateFoodItemFragmentToFoodItemList()
+                )
+                viewModel.endNavigateToList()
+            }
+
+        })
 
 
 
