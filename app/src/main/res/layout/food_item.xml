@@ -11,7 +11,7 @@
 
         <variable
             name="foodItemData4Listener"
-            type="codes.malukimuthusi.restarauntdemoapp.apter.FoodItemListener" />
+            type="codes.malukimuthusi.restarauntdemoapp.adapters.FoodItemListener" />
 
     </data>
 

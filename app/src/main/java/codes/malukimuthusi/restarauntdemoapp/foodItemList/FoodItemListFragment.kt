@@ -7,13 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import codes.malukimuthusi.restarauntdemoapp.R
-import codes.malukimuthusi.restarauntdemoapp.apter.FoodItemAdapter
-import codes.malukimuthusi.restarauntdemoapp.apter.FoodItemListener
+import codes.malukimuthusi.restarauntdemoapp.adapters.FoodItemAdapter
+import codes.malukimuthusi.restarauntdemoapp.adapters.FoodItemListener
 import codes.malukimuthusi.restarauntdemoapp.database.FoodItemDatabase
-import codes.malukimuthusi.restarauntdemoapp.database.FoodItemDatabaseDao
 import codes.malukimuthusi.restarauntdemoapp.databinding.FragmentFoodItemListBinding
 
 class FoodItemListFragment : Fragment() {

@@ -1,4 +1,4 @@
-package codes.malukimuthusi.restarauntdemoapp.apter
+package codes.malukimuthusi.restarauntdemoapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

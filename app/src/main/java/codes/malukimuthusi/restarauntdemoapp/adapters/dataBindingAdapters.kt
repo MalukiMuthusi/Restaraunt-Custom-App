@@ -1,4 +1,4 @@
-package codes.malukimuthusi.restarauntdemoapp.apter
+package codes.malukimuthusi.restarauntdemoapp.adapters
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter

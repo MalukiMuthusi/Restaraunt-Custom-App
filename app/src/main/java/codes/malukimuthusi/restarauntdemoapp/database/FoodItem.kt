@@ -10,12 +10,12 @@ data class FoodItem(
     val foodId: Long = 0L,
 
     @ColumnInfo
-    val foodImge: String,
+    val foodImge: String = "Default Image String",
 
     @ColumnInfo
-    val foodTitle: String,
+    val foodTitle: String = "Default Food Title Text",
 
     @ColumnInfo()
-    val foodDescription: String
+    val foodDescription: String = "Default Food Description Text."
 ) {
 }
