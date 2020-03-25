@@ -9,7 +9,11 @@
         android:id="@+id/foodItemList"
         android:name="codes.malukimuthusi.restarauntdemoapp.foodItemList.FoodItemListFragment"
         android:label="fragment_food_item_list"
-        tools:layout="@layout/fragment_food_item_list" />
+        tools:layout="@layout/fragment_food_item_list" >
+        <action
+            android:id="@+id/action_foodItemList_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createFoodItemFragment"
         android:name="codes.malukimuthusi.restarauntdemoapp.createFoodItem.CreateFoodItemFragment"
@@ -18,4 +22,9 @@
             android:id="@+id/action_createFoodItemFragment_to_foodItemList"
             app:destination="@id/foodItemList" />
     </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="codes.malukimuthusi.restarauntdemoapp.foodDetail.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" />
 </navigation>

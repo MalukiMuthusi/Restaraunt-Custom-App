@@ -15,6 +15,10 @@ buildscript {
         // in the individual module build.gradle files
         def nav_version = "2.3.0-alpha04"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        // adds docs
+        def dokka_version = "0.10.1"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:${dokka_version}"
     }
 }
 

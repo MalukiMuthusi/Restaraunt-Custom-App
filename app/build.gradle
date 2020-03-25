@@ -17,6 +17,7 @@ android {
     }
     apply plugin: 'kotlin-kapt'
     apply plugin: "androidx.navigation.safeargs.kotlin"
+    apply plugin: 'org.jetbrains.dokka'
 
 
     buildTypes {

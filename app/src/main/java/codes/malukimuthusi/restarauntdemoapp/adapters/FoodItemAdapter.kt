@@ -19,15 +19,21 @@ class FoodItemAdapter(private val clickListener: FoodItemListener) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = getItem(position)
+//        val item = getItem(position)
 
-        holder.bind(item, clickListener)
+        holder.bind(getItem(position)!!, clickListener)
     }
 
     class ViewHolder private constructor(private val binding: FoodItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        /*
+        * bind  data here.
+        * binding.executePendingBindings()
+        *   binds data defined elsewhere.
+        * */
         fun bind(item: FoodItem, clickListener: FoodItemListener) {
             binding.foodItemData = item
+            binding.foodItemData4Listener = clickListener
             binding.executePendingBindings()
 
         }

@@ -36,6 +36,7 @@ class FoodItemListViewModel(val dataSource: FoodItemDatabaseDao, application: Ap
 
     }
 
+
     private fun insertFoodItems() {
         uiScope.launch {
             insertToDB()
@@ -87,6 +88,24 @@ class FoodItemListViewModel(val dataSource: FoodItemDatabaseDao, application: Ap
             dataSource.getFoodItem() as FoodItem?
         }
 
+    }
+
+    /*
+    * Navigate to Food Item Fragment
+    * */
+    private val _navigateToDetails = MutableLiveData<Long>()
+    val navigateToDetails
+        get() = _navigateToDetails
+
+    fun foodItemClicked(foodId: Long) {
+        _navigateToDetails.value = foodId
+    }
+
+    /*
+    * finished navigating
+    * */
+    fun navigatedToDetails() {
+        _navigateToDetails.value = null
     }
 
     override fun onCleared() {
