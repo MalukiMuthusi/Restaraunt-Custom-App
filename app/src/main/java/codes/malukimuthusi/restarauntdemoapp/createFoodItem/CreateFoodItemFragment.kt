@@ -17,9 +17,7 @@ import codes.malukimuthusi.restarauntdemoapp.databinding.CreateFoodItemFragmentB
 
 class CreateFoodItemFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CreateFoodItemFragment()
-    }
+
 
     private lateinit var viewModel: CreateFoodItemViewModel
 

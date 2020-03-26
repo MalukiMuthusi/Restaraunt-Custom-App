@@ -26,5 +26,10 @@
         android:id="@+id/foodDetailFragment"
         android:name="codes.malukimuthusi.restarauntdemoapp.foodDetail.FoodDetailFragment"
         android:label="fragment_food_detail"
-        tools:layout="@layout/fragment_food_detail" />
+        tools:layout="@layout/fragment_food_detail" >
+        <argument
+            android:name="foodID"
+            app:argType="long"
+            android:defaultValue="1L" />
+    </fragment>
 </navigation>

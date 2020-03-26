@@ -19,7 +19,6 @@ class FoodItemAdapter(private val clickListener: FoodItemListener) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val item = getItem(position)
 
         holder.bind(getItem(position)!!, clickListener)
     }

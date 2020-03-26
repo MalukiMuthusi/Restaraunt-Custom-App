@@ -31,7 +31,15 @@ class FoodItemListFragment : Fragment() {
                 inflater,
                 R.layout.fragment_food_item_list, container, false
             )
-        // set View Model
+        /*
+        * set the lifecyle owner of this data binding.
+        * */
+//        binding.lifecycleOwner = this
+
+        /*
+        * Create ViewModel
+        *   ViewModel Holds data and logic for this fragment
+        * */
         val application = requireNotNull(this.activity).application
         val dataSource = FoodItemDatabase.getInstance(application).foodItemDatabaseDao
         val viewModelFactory = FoodItemListViewModelFactory(dataSource, application)
@@ -39,32 +47,41 @@ class FoodItemListFragment : Fragment() {
             ViewModelProviders.of(this, viewModelFactory).get(FoodItemListViewModel::class.java)
         binding.viewModel = viewModel
 
-
+        /*
+        * Create a Recycle View Adapter.
+        *   The adapter, adapts between viewHolder and RecyclerView List.
+        * */
         val adapter =
             FoodItemAdapter(
                 FoodItemListener { foodId ->
-//                    Toast.makeText(context, "${foodId}", Toast.LENGTH_LONG).show()
+                    foodId.let {
+                        viewModel.onClickNavigateToDetails()
+//                        Toast.makeText(context, "${foodId}", Toast.LENGTH_SHORT).show()
+                    }
 
-                    viewModel.foodItemClicked(foodId)
                 })
 
         binding.foodItemList.adapter = adapter
 
-
-        // Observe the List and notify Any changes
-        viewModel.foodItemList?.observe(viewLifecycleOwner, Observer {
+        /*
+        * Submit data to the Adapter.
+        *   Observe for changes.
+        * */
+        viewModel.foodItemList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
             }
         })
 
-        // observe item clicked to navigate
-        viewModel.navigateToDetails.observe(viewLifecycleOwner, Observer {
-            it?.let {
+        /*
+        * Observe Food Id to navigate to its Details Fragment.
+        * */
+        viewModel.navigateToDetailsFragment.observe(viewLifecycleOwner, Observer { foodID ->
+            foodID.let {
                 this.findNavController().navigate(
-                    FoodItemListFragmentDirections.actionFoodItemListToFoodDetailFragment()
+                    FoodItemListFragmentDirections.actionFoodItemListToFoodDetailFragment(foodID)
                 )
-                viewModel.navigatedToDetails()
+                viewModel.stopNavigation()
             }
         })
 
