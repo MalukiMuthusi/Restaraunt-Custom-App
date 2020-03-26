@@ -69,7 +69,7 @@ class FoodItemListFragment : Fragment() {
         * */
         viewModel.foodItemList.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.submitList(it)
+                adapter.addHeaderAndSubmitList(it)
             }
         })
 
